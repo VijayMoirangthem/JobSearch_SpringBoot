@@ -12,9 +12,9 @@ import springfox.documentation.annotations.ApiIgnore;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
-
+//@CrossOrigin(origins = "https://careersphere.vercel.app/")
 @RestController
-@CrossOrigin(origins = "https://careersphere.vercel.app/")
+@CrossOrigin(origins = "http://localhost:3000")
 public class PostController
 {
 
