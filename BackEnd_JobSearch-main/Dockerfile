@@ -3,6 +3,6 @@ COPY . .
 RUN mvn clean package -DskipTests
 
 FROM openjdk:17.0.1-jdk-slim
-COPY --from=build /target/BackEnd_JobSearch-main-0.0.1-SNAPSHOT.jar demo.jar
+COPY --from=build /target/joblisting-0.0.1-SNAPSHOT.jar joblisting.jar
 EXPOSE 8080
-ENTRYPOINT ["java","-jar","BackEnd_JobSearch-main.jar"]
+ENTRYPOINT ["java","-jar","joblisting.jar"]
