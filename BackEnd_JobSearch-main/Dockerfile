@@ -3,6 +3,6 @@ COPY . .
 RUN mvn clean package -DskipTests
 
 FROM openjdk:17.0.1-jdk-slim
-COPY --from=build /target/joblisting-0.0.1-SNAPSHOT.jar joblisting.jar
+COPY --from=build /target/spring-boot-starter-parent-0.0.1-SNAPSHOT.jar spring-boot-starter-parent.jar
 EXPOSE 8080
-ENTRYPOINT ["java","-jar","joblisting.jar"]
+ENTRYPOINT ["java","-jar","spring-boot-starter-parent.jar"]
