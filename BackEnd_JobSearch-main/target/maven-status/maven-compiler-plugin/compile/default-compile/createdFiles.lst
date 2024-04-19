@@ -1,0 +1,6 @@
+com\vj\joblisting\model\Post.class
+com\vj\joblisting\repository\SearchRepositoryImpl.class
+com\vj\joblisting\controller\PostController.class
+com\vj\joblisting\JoblistingApplication.class
+com\vj\joblisting\repository\PostRepository.class
+com\vj\joblisting\repository\SearchRepository.class
