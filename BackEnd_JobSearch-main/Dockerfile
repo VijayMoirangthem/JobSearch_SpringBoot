@@ -13,8 +13,10 @@ WORKDIR /app
 # Set working directory to /app
 COPY . .                       
 # Copy the entire project to /app
-RUN mvn -f /app/pom.xml clean package -DskipTests   
-# Run Maven from /app directory
+WORKDIR /app                   
+# Set working directory to /app again (to ensure correct context)
+RUN mvn clean package -DskipTests   
+# Run Maven to build the application
 
 # Stage 2: Create the final image
 FROM openjdk:17.0.1-jdk-slim
@@ -22,4 +24,5 @@ COPY --from=build /app/target/joblisting-0.0.1-SNAPSHOT.jar /app/joblisting.jar
 # Copy the JAR file from the build stage
 EXPOSE 8080                    
 # Expose port 8080
-ENTRYPOINT ["java", "-jar", "/app/joblisting.jar"]   # Run the application when the container starts
+ENTRYPOINT ["java", "-jar", "/app/joblisting.jar"]   
+# Run the application when the container starts
