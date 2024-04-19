@@ -13,7 +13,8 @@ WORKDIR /app
 # Set working directory to /app
 COPY . .                       
 # Copy the entire project to /app
-RUN mvn -f /app/pom.xml clean package -DskipTests   # Run Maven from /app directory
+RUN mvn -f /app/pom.xml clean package -DskipTests   
+# Run Maven from /app directory
 
 # Stage 2: Create the final image
 FROM openjdk:17.0.1-jdk-slim
