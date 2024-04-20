@@ -1,8 +1,8 @@
-FROM maven:3.9.6-openjdk-11.0.16 AS build
+FROM maven:3.9.6-openjdk-11.0.16.1 AS build
 COPY . .
 RUN mvn clean package -DskipTests
 # Package stage
-FROM openjdk:11.0.16-jdk-slim
+FROM openjdk:11.0.16.1-jdk-slim
 COPY --from=build /target/joblisting-0.0.1-SNAPSHOT.jar joblisting.jar
 # ENV PORT=8080
 EXPOSE 8080
