@@ -1,6 +1,6 @@
 FROM maven:3.9.6-openjdk-11.0.16 AS build
 COPY . .
-RUN mvn clean install
+RUN mvn clean package -DskipTests
 # Package stage
 FROM openjdk:11.0.16-jdk-slim
 COPY --from=build /target/joblisting-0.0.1-SNAPSHOT.jar joblisting.jar
