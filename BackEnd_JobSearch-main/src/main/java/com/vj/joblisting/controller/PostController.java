@@ -12,9 +12,10 @@ import springfox.documentation.annotations.ApiIgnore;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
-//@CrossOrigin(origins = "https://careersphere.vercel.app/")
+//@CrossOrigin(origins = "http://localhost:3000")
+
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "https://jobsearch-reactjs.onrender.com") // change this accordingly to the hosted site
 public class PostController
 {
 
